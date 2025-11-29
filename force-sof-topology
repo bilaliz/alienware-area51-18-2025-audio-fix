@@ -1,0 +1,21 @@
+#!/bin/sh
+PREREQ=""
+prereqs()
+{
+    echo "$PREREQ"
+}
+case $1 in
+prereqs)
+    prereqs
+    exit 0
+    ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+# Force copy the SOF topology file
+# We use the MTL topology (which is verified working) but name it as the ARL topology
+# expected by the driver.
+
+mkdir -p $DESTDIR/lib/firmware/intel/sof-ace-tplg
+cp -f /lib/firmware/intel/sof-ace-tplg/sof-arl-rt722-l0_rt1320-l2.tplg $DESTDIR/lib/firmware/intel/sof-ace-tplg/

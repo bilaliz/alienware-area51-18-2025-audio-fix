@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Alienware Audio Fix
+Comment=Restores audio on login
+Exec=sudo /usr/local/bin/alienware-audio-boot-fix.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable Alienware Audio Hardware Switches
+After=sound.target
+Wants=sound.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/enable-sound-switches.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
