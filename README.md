@@ -12,12 +12,12 @@ This repository contains a fix for audio issues on Alienware laptops (and potent
 ## The Solution
 This fix installs:
 1.  **Intel SOF Firmware v2.13** (Arrow Lake)
-2.  **Topology Workaround**: Uses Meteor Lake topology to bypass the duplicate control bug
+2.  **Kernel Module Override**: Forces the driver to use the working Meteor Lake topology natively via `/etc/modprobe.d/`
 3.  **Custom ALSA UCM**: Adds support for RT1320 amplifier and RT722 codec
 4.  **Hardware Switch Service**: Automatically enables amplifier switches on boot
 5.  **Persistence**:
-    - **Initramfs Hook**: Forces correct topology at boot
-    - **Autostart Script**: Automatically restores audio on login (fallback)
+    - **Initramfs Hook**: Ensures the correct topology is available at boot
+    - **Autostart Script**: Smart fallback that only runs if the native fix fails
 
 ## Installation
 

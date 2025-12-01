@@ -32,6 +32,7 @@ systemctl disable sound-switches.service || true
 rm -f /etc/systemd/system/sound-switches.service
 rm -f /usr/local/bin/enable-sound-switches.sh
 rm -f /etc/initramfs-tools/hooks/force-sof-topology
+rm -f /etc/modprobe.d/sof-custom.conf
 rm -f /etc/sudoers.d/alienware-audio-fix
 rm -f /home/$SUDO_USER/.config/autostart/alienware-audio-fix.desktop
 systemctl daemon-reload

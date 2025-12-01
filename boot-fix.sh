@@ -4,6 +4,12 @@
 
 set -e
 
+# 0. Check if audio is already working
+if grep -q "sof-soundwire" /proc/asound/cards; then
+    echo "Audio card already detected. Skipping fix."
+    exit 0
+fi
+
 # 1. Ensure correct topology is in place
 # We copy the MTL topology (which works) to the ARL path
 if [ -f "/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt722-l0.tplg" ]; then

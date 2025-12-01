@@ -14,8 +14,8 @@ esac
 . /usr/share/initramfs-tools/hook-functions
 
 # Force copy the SOF topology file
-# We use the MTL topology (which is verified working) but name it as the ARL topology
-# expected by the driver.
+# We copy the MTL topology which is referenced by our modprobe config
 
 mkdir -p $DESTDIR/lib/firmware/intel/sof-ace-tplg
-cp -f /lib/firmware/intel/sof-ace-tplg/sof-arl-rt722-l0_rt1320-l2.tplg $DESTDIR/lib/firmware/intel/sof-ace-tplg/
+cp -f /lib/firmware/intel/sof-ace-tplg/sof-mtl-rt722-l0.tplg $DESTDIR/lib/firmware/intel/sof-ace-tplg/
+

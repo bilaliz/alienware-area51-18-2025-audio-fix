@@ -63,10 +63,12 @@ cp "$SCRIPT_DIR/enable-sound-switches.sh" /usr/local/bin/
 chmod +x /usr/local/bin/enable-sound-switches.sh
 cp "$SCRIPT_DIR/sound-switches.service" /etc/systemd/system/
 
-# 5. Install Initramfs Hook (Backup Persistence)
-echo "[5/6] Installing Initramfs Hook..."
+# 5. Install Initramfs Hook & Modprobe Config (Proper Permanent Fix)
+echo "[5/6] Installing Initramfs Hook & Modprobe Config..."
 cp "$SCRIPT_DIR/force-sof-topology" /etc/initramfs-tools/hooks/
 chmod +x /etc/initramfs-tools/hooks/force-sof-topology
+cp "$SCRIPT_DIR/sof-custom.conf" /etc/modprobe.d/
+
 
 # 6. Install Autostart Fix (User Login Fix)
 echo "[6/6] Installing Autostart Fix..."
