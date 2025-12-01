@@ -1,0 +1,4 @@
+apply-temp-fix (copy).sh
+*.swp
+*~
+.DS_Store
